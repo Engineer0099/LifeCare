@@ -1,0 +1,41 @@
+.min-h-screen{
+    min-height: 100vh;
+}
+.bg-gradient-to-b{
+    background-image: linear-gradient(to bottom, #FAFBFC, #FFFFFF);
+}
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+.relative{
+    position: relative;
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+.pt-12{
+    padding-top: 3rem;
+}
+.pb-20{
+    padding-bottom: 5rem;
+}
+.md:pt-20{
+    @media (min-width: 768px) {
+        padding-top: 5rem;
+    }
+}
+.md:pb-32{
+    @media (min-width: 768px) {
+        padding-bottom: 8rem;
+    }
+}
+.flex-grow{
+    flex-grow: 1;
+}
+.me{
+    color: red;
+    background: red;
+}

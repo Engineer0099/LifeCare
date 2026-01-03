@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-[#FAFBFC] to-white flex flex-col">
+
+<!-- HEADER -->
+<header class="bg-white shadow sticky top-0 z-50" id="header">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-[#3FB8A8]">Life Choice Services</h1>
+    <nav class="flex gap-6 font-semibold">
+      <a href="/" class="hover:text-[#3FB8A8]">Home</a>
+      <a href="/about" class="text-[#3FB8A8]">About</a>
+      <a href="/services" class="hover:text-[#3FB8A8]">Services</a>
+      <a href="/contact" class="hover:text-[#3FB8A8]">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-20 pb-32 text-center">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#3FB8A8]/10 to-[#FF6B6B]/10 -z-10"></div>
+  <h1 class="text-5xl md:text-6xl font-bold mb-6">About Us</h1>
+  <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    Life Choice Services Ltd is a CQC-registered provider of domiciliary care services,
+    delivering exceptional quality care with dignity and respect.
+  </p>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="py-20 bg-white flex-grow">
+  <div class="container mx-auto px-4">
+
+    <!-- STORY -->
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+      <div>
+        <h2 class="text-4xl font-bold mb-6">Our Story</h2>
+        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+          Life Choice Services Ltd (trading as My Homecare) was established to provide
+          high-quality, person-centred domiciliary care services tailored to individual needs.
+        </p>
+        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+          Our DBS-checked carers support adults aged 18–65+ including those with dementia,
+          disabilities, and terminal illnesses.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          As a CQC-registered provider, we continuously improve our services to ensure
+          safety, quality, and compassion.
+        </p>
+      </div>
+
+      <img src="/images/team-care.jpg"
+           alt="Care Team"
+           class="rounded-3xl shadow-2xl w-full object-cover">
+    </div>
+
+    <!-- CORE VALUES -->
+    <div class="mb-24">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Our Core Values</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Principles that guide every decision we make.
+        </p>
+      </div>
+
+      <div id="valuesGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+    </div>
+
+    <!-- CREDENTIALS -->
+    <div class="bg-gradient-to-r from-[#3FB8A8]/5 to-[#FF6B6B]/5 rounded-3xl p-12">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Credentials & Compliance</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+
+        <div>
+          <div class="bg-[#3FB8A8] text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="check-circle" class="w-10 h-10"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">CQC Registered</h3>
+          <p class="font-semibold text-gray-600">Provider ID: 1-23688687275</p>
+          <p class="text-gray-600 text-sm mt-2">
+            Regulated and inspected to ensure care excellence.
+          </p>
+        </div>
+
+        <div>
+          <div class="bg-[#FF6B6B] text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="check-circle" class="w-10 h-10"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Companies House</h3>
+          <p class="font-semibold text-gray-600">No: 15548870</p>
+          <p class="text-gray-600 text-sm mt-2">
+            Fully registered and legally compliant.
+          </p>
+        </div>
+
+        <div>
+          <div class="bg-[#52C41A] text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="check-circle" class="w-10 h-10"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">DBS Checked</h3>
+          <p class="font-semibold text-gray-600">All Staff Verified</p>
+          <p class="text-gray-600 text-sm mt-2">
+            Ensuring safety and peace of mind.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-gradient-to-r from-[#3FB8A8] to-[#2D8F80] text-white text-center">
+  <h2 class="text-4xl font-bold mb-6">Experience the Difference</h2>
+  <p class="text-xl mb-8 max-w-2xl mx-auto">
+    Professional, compassionate care tailored to your needs.
+  </p>
+  <div class="flex justify-center gap-4">
+    <a href="tel:07397149133" class="bg-white text-[#3FB8A8] px-8 py-4 rounded-lg font-bold">
+      Call Now
+    </a>
+    <a href="/contact.html" class="bg-[#FF6B6B] px-8 py-4 rounded-lg font-bold">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-6 text-center" id="footer">
+  © 2026 Life Choice Services
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  const values = [
+    {
+      icon: "heart",
+      title: "Dignity & Respect",
+      description: "We treat everyone with dignity, respect, and compassion."
+    },
+    {
+      icon: "users",
+      title: "Person-Centred Care",
+      description: "Care plans tailored to individual needs and preferences."
+    },
+    {
+      icon: "award",
+      title: "Quality Excellence",
+      description: "Committed to exceeding care standards."
+    },
+    {
+      icon: "clock",
+      title: "24/7 Availability",
+      description: "Support available whenever you need it."
+    }
+  ];
+
+  const grid = document.getElementById("valuesGrid");
+
+  values.forEach(value => {
+    const card = document.createElement("div");
+    card.className = "bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition";
+
+    card.innerHTML = `
+      <div class="bg-[#3FB8A8]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+        <i data-lucide="${value.icon}" class="w-8 h-8 text-[#3FB8A8]"></i>
+      </div>
+      <h3 class="text-xl font-bold mb-3">${value.title}</h3>
+      <p class="text-gray-600 leading-relaxed">${value.description}</p>
+    `;
+
+    grid.appendChild(card);
+  });
+
+  lucide.createIcons();
+</script>
+<script src="scripts/footer.js"></script>
+<script src="scripts/header.js"></script>
+
+</body>
+</html>

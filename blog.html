@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-[#FAFBFC] to-white flex flex-col">
+
+<!-- HEADER -->
+<header class="bg-white shadow sticky top-0 z-50" id="header">
+  <div class="container mx-auto px-4 py-4 flex justify-between">
+    <h1 class="text-2xl font-bold text-[#3FB8A8]">Life Choice Services</h1>
+    <nav class="flex gap-6">
+      <a href="/" class="hover:text-[#3FB8A8]">Home</a>
+      <a href="/blog" class="text-[#3FB8A8] font-semibold">Blog</a>
+      <a href="/contact" class="hover:text-[#3FB8A8]">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-20 pb-32 text-center">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#3FB8A8]/10 to-[#FF6B6B]/10 -z-10"></div>
+  <h1 class="text-5xl md:text-6xl font-bold mb-6">Latest News & Insights</h1>
+  <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    Company updates and industry expertise to help you make informed decisions.
+  </p>
+</section>
+
+<!-- FILTER -->
+<section class="container mx-auto px-4">
+  <div id="categoryButtons" class="flex flex-wrap justify-center gap-3 mb-16"></div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="container mx-auto px-4 pb-32 flex-grow">
+  <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  <p id="noResults" class="hidden text-center text-xl text-gray-600 mt-12">
+    No articles found in this category.
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-gradient-to-r from-[#3FB8A8] to-[#2D8F80] text-white text-center">
+  <h2 class="text-4xl font-bold mb-6">Have Questions?</h2>
+  <p class="text-xl mb-8 max-w-2xl mx-auto">
+    Our team is here to help you with care options.
+  </p>
+  <div class="flex justify-center gap-4">
+    <a href="tel:07397149133" class="bg-white text-[#3FB8A8] px-8 py-4 rounded-lg font-bold">
+      Call Now
+    </a>
+    <a href="/contact.html" class="bg-[#FF6B6B] px-8 py-4 rounded-lg font-bold">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-6 text-center" id="footer">
+  © 2026 Life Choice Services
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  lucide.createIcons();
+
+  let selectedCategory = "All";
+
+  const categories = [
+    "All",
+    "Care Guide",
+    "Industry Insight",
+    "Wellness",
+    "Compliance",
+    "Support",
+    "Technology"
+  ];
+
+  const blogPosts = [
+    {
+      title: "Understanding Dementia Care",
+      excerpt: "Learn compassionate dementia care approaches.",
+      date: "Nov 28, 2025",
+      category: "Care Guide",
+      icon: "brain",
+      readTime: "5 min"
+    },
+    {
+      title: "Person-Centred Home Care",
+      excerpt: "Tailored care plans improve wellbeing.",
+      date: "Nov 25, 2025",
+      category: "Industry Insight",
+      icon: "heart",
+      readTime: "6 min"
+    },
+    {
+      title: "Aging in Place",
+      excerpt: "Maintain independence at home safely.",
+      date: "Nov 22, 2025",
+      category: "Wellness",
+      icon: "home",
+      readTime: "4 min"
+    },
+    {
+      title: "CQC Standards Explained",
+      excerpt: "Why care quality standards matter.",
+      date: "Nov 20, 2025",
+      category: "Compliance",
+      icon: "check-circle",
+      readTime: "7 min"
+    },
+    {
+      title: "Supporting Carers",
+      excerpt: "Mental health and wellbeing resources.",
+      date: "Nov 18, 2025",
+      category: "Support",
+      icon: "handshake",
+      readTime: "5 min"
+    },
+    {
+      title: "Home Care Technology",
+      excerpt: "Innovations transforming care.",
+      date: "Nov 15, 2025",
+      category: "Technology",
+      icon: "zap",
+      readTime: "6 min"
+    }
+  ];
+
+  const buttonsContainer = document.getElementById("categoryButtons");
+  const blogGrid = document.getElementById("blogGrid");
+  const noResults = document.getElementById("noResults");
+
+  function renderCategories() {
+    buttonsContainer.innerHTML = "";
+    categories.forEach(cat => {
+      const btn = document.createElement("button");
+      btn.textContent = cat;
+      btn.className =
+        "px-4 py-2 rounded-full font-semibold transition " +
+        (selectedCategory === cat
+          ? "bg-[#3FB8A8] text-white"
+          : "bg-gray-100 hover:bg-gray-200");
+
+      btn.onclick = () => {
+        selectedCategory = cat;
+        renderCategories();
+        renderPosts();
+      };
+
+      buttonsContainer.appendChild(btn);
+    });
+  }
+
+  function renderPosts() {
+    blogGrid.innerHTML = "";
+
+    const filtered =
+      selectedCategory === "All"
+        ? blogPosts
+        : blogPosts.filter(p => p.category === selectedCategory);
+
+    if (filtered.length === 0) {
+      noResults.classList.remove("hidden");
+      return;
+    }
+
+    noResults.classList.add("hidden");
+
+    filtered.forEach(post => {
+      const card = document.createElement("div");
+      card.className =
+        "bg-white border-2 rounded-2xl overflow-hidden hover:border-[#3FB8A8] hover:shadow-2xl transition flex flex-col";
+
+      card.innerHTML = `
+        <div class="h-40 flex items-center justify-center bg-gradient-to-br from-[#3FB8A8]/10 to-[#FF6B6B]/10">
+          <i data-lucide="${post.icon}" class="w-16 h-16 text-[#3FB8A8]"></i>
+        </div>
+
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex justify-between text-xs mb-2">
+            <span class="font-bold text-[#3FB8A8]">${post.category}</span>
+            <span class="text-gray-500">${post.readTime}</span>
+          </div>
+
+          <h3 class="text-xl font-bold mb-3">${post.title}</h3>
+          <p class="text-gray-600 text-sm flex-grow">${post.excerpt}</p>
+
+          <div class="flex justify-between items-center pt-4 border-t mt-4 text-sm text-gray-500">
+            <span>${post.date}</span>
+            <i data-lucide="arrow-right"></i>
+          </div>
+        </div>
+      `;
+
+      blogGrid.appendChild(card);
+    });
+
+    lucide.createIcons();
+  }
+
+  renderCategories();
+  renderPosts();
+</script>
+<script src="scripts/footer.js"></script>
+<script src="scripts/header.js"></script>
+</body>
+</html>
